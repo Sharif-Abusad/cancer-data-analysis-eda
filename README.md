@@ -8,8 +8,6 @@
 ![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Plots-4C8CBF)
 ![SciPy](https://img.shields.io/badge/SciPy-Hypothesis%20Testing-8CAAE6?logo=scipy&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-Random%20Forest-F7931E?logo=scikitlearn&logoColor=white)
-![Dataset](https://img.shields.io/badge/Dataset-Global%20Cancer%20Patients%202015--2024-blue)
-![Records](https://img.shields.io/badge/Records-50%2C000-informational)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 An end-to-end **exploratory, statistical, and predictive analysis** of 50,000 global cancer patient records (2015-2024), built with **Python** and **Jupyter Notebook**. It covers the full analyst workflow: data inspection, descriptive analysis, risk factor analysis, hypothesis testing (correlation, Kruskal-Wallis, OLS interaction), Random Forest feature importance, and economic burden analysis across countries and age groups.
