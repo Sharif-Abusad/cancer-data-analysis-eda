@@ -3,14 +3,15 @@
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-Numerical-013243?logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C)
-![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Plots-4C8CBF)
-![SciPy](https://img.shields.io/badge/SciPy-Hypothesis%20Testing-8CAAE6?logo=scipy&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-Random%20Forest-F7931E?logo=scikitlearn&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
+![Dataset](https://img.shields.io/badge/Dataset-Global%20Cancer%20Patients%202015--2024-blue)
+![Records](https://img.shields.io/badge/Records-50%2C000-informational)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 An end-to-end **exploratory, statistical, and predictive analysis** of 50,000 global cancer patient records (2015-2024), built with **Python** and **Jupyter Notebook**. It covers the full analyst workflow: data inspection, descriptive analysis, risk factor analysis, hypothesis testing (correlation, Kruskal-Wallis, OLS interaction), Random Forest feature importance, and economic burden analysis across countries and age groups.
+
+The project has two parts: a **Python notebook** for statistical analysis and modelling, and a **four-page Power BI dashboard** for interactive exploration.
 
 The goal is to turn raw health data into evidence-backed insights about what drives cancer severity, survival, and treatment cost, and where disparities exist.
 
@@ -25,6 +26,7 @@ The goal is to turn raw health data into evidence-backed insights about what dri
 - [Tech Stack](#-tech-stack)
 - [Methodology](#-methodology)
 - [Key Findings](#-key-findings)
+- [Power BI Dashboard](#-power-bi-dashboard)
 - [Project Structure](#-project-structure)
 - [How to Run](#-how-to-run)
 - [Limitations](#-limitations)
@@ -71,6 +73,7 @@ The goal is to turn raw health data into evidence-backed insights about what dri
 - **Visualization:** Matplotlib, Seaborn
 - **Statistics:** SciPy (`linregress`, `pearsonr`, `spearmanr`, `shapiro`, `kruskal`), Statsmodels (OLS with interaction terms)
 - **Machine learning:** Scikit-learn (Random Forest Regressor, GridSearchCV)
+- **Dashboard:** Power BI Desktop, DAX
 - **Environment:** Jupyter Notebook
 
 ---
@@ -80,7 +83,7 @@ The goal is to turn raw health data into evidence-backed insights about what dri
 1. **Data inspection:** structure, data types, duplicate check
 2. **Descriptive analysis:** univariate analysis of age, gender, country, cancer type, stage, and treatment cost using KDE plots, histograms, bar charts, and pie charts
 3. **Risk factor analysis:** linear regression of each risk factor against severity score
-4. **Early-stage diagnosis analysis:** share of Stage 0-II diagnoses for each cancer type
+4. **Early-stage diagnosis analysis:** share of Stage 0 and Stage I diagnoses for each cancer type
 5. **Predictor identification:** Pearson and Spearman correlations plus Random Forest feature importance for severity and survival
 6. **Economic analysis:** average treatment cost by country, age group, and gender (grouped bars and heatmaps)
 7. **Hypothesis testing:**
@@ -104,13 +107,46 @@ The goal is to turn raw health data into evidence-backed insights about what dri
 
 ---
 
+## 📈 Power BI Dashboard
+
+An interactive four-page dashboard built in Power BI with a custom healthcare theme. All pages share the same slicers (Country, Gender, Cancer Type, Year) and a page navigator in the header.
+
+### 1. Overview
+Headline KPIs (total patients, average treatment cost, survival years, severity score), patients by year, gender, country, cancer type, and age group.
+
+![Overview](dashboard/screenshots/overview.png)
+
+### 2. Demographics & Diagnosis
+Cancer stage distribution, early-stage share by cancer type, gender split by age group, and a cancer type by stage heatmap.
+
+![Demographics](dashboard/screenshots/demographics.png)
+
+### 3. Risk Factors & Severity
+Average severity by smoking, genetic risk, and pollution level, correlation of each factor with severity, and a smoking by genetic risk heatmap.
+
+![Risk Factors](dashboard/screenshots/risk-factors.png)
+
+### 4. Treatment Cost & Economic Burden
+Average cost by country and stage, survival by cost band, and an age group by country cost heatmap.
+
+![Economic Burden](dashboard/screenshots/economic-burden.png)
+
+---
+
 ## 📁 Project Structure
 
 ```
-cancer-data-analysis-eda
-   ├── cancer-data-analysis.ipynb          # Main analysis notebook
+cancer-data-analysis-eda/
+   ├── cancer-data-analysis.ipynb           # Main analysis notebook
    ├── global_cancer_patients_2015_2024.csv # Dataset
-   ├── problem_statement.md                # Project vision and objectives
+   ├── problem_statement.md                 # Project vision and objectives
+   ├── dashboard/
+   │   ├── Cancer_Dashboard.pbix            # Power BI dashboard
+   │   └── screenshots/
+   │       ├── overview.png
+   │       ├── demographics.png
+   │       ├── risk-factors.png
+   │       └── economic-burden.png
    └── README.md
 ```
 
@@ -144,13 +180,12 @@ jupyter notebook cancer-data-analysis.ipynb
 
 - Add gradient boosting models (XGBoost/LightGBM) and compare against Random Forest
 - Use SHAP for model explainability
-- Build an interactive dashboard (Streamlit, Power BI, or Tableau)
+- Publish the dashboard to Power BI Service for live sharing
 - Validate the analysis on real-world cancer registry data
 
 ---
 
 ## 👤 Author
-
 <div align="center">
 
 **Sharif Abusad**
